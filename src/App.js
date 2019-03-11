@@ -1,28 +1,49 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+//import logo from './logo.svg';
+//import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+import faker from 'faker';
+
+import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
+
+const App = () => {
+	return (
+		<div className='ui container comments'>
+			<ApprovalCard>
+				<CommentDetail
+					author={faker.name.firstName()}
+					avatar={faker.image.avatar()}
+					time={faker.date.recent().toDateString()}
+					content={faker.lorem.sentence()}
+				/>
+			</ApprovalCard>
+			<ApprovalCard>
+				<CommentDetail
+					author={faker.name.firstName()}
+					avatar={faker.image.avatar()}
+					time={faker.date.recent().toDateString()}
+					content={faker.lorem.sentence()}
+				/>
+			</ApprovalCard>
+			<ApprovalCard>
+				<CommentDetail
+					author={faker.name.firstName()}
+					avatar={faker.image.avatar()}
+					time={faker.date.recent().toDateString()}
+					content={faker.lorem.sentence()}
+				/>
+			</ApprovalCard>
+			<ApprovalCard>
+				<CommentDetail
+					author={faker.name.firstName()}
+					avatar={faker.image.avatar()}
+					time={faker.date.recent().toDateString()}
+					content={faker.lorem.sentence()}
+				/>
+			</ApprovalCard>
+		</div>
+	);
+};
 
 export default App;
